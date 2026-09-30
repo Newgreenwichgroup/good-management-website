@@ -247,6 +247,16 @@ nav a:hover { color: #FFFFFF; }
 .search input:focus { border-color: var(--c-blue); outline: none; box-shadow: 0 0 0 2px rgba(31,58,112,0.12); }
 .search input::placeholder { color: #A8B0BC; }
 
+/* Insights: white search field, navy type. */
+.search--light input { background: #FFFFFF; color: var(--c-ink); border-color: #FFFFFF; }
+.search--light input::placeholder { color: #6B7A95; }
+.search--light input:focus { border-color: #FFFFFF; box-shadow: 0 0 0 3px rgba(169,191,228,0.45); }
+
+/* Insights listing band: top padding matches the space below the search
+   field (its margin + the filter row + the filter margin), so the field
+   sits midway between the white banner and the first row of cards.     */
+.section-listing { padding-top: 95px; }
+
 .search-status { text-align: center; font-size: 13px; color: var(--c-muted); margin: -18px 0 22px; }
 .filters { text-align: center; margin-bottom: var(--s-4); }
 .filters a {
