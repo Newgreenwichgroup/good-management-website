@@ -333,6 +333,10 @@ nav a:hover { color: #FFFFFF; }
 :focus-visible { outline: 2px solid var(--c-blue); outline-offset: 3px; }
 
 
+/* Emphasised phrase in body copy: regular weight, heading colour.
+   Turns navy automatically inside .section-white. */
+.emph { font-weight: 400; color: var(--c-blue); }
+
 /* --- White sections ----------------------------------------------------------
    Rule: one white section per page, on whatever that page most wants read.
    Not alternated — navy and white in rhythm reads as stripes and loses the
@@ -350,6 +354,7 @@ nav a:hover { color: #FFFFFF; }
 .section-white .tag { color: #7C8AA3; }
 .section-white .qa { border-top-color: #E2E6EC; }
 .section-white .qa-item { border-bottom-color: #ECEFF3; }
+.section-white .emph { color: #16294F; }
 .section-white .card { border-color: #DDE2EA; }
 .section-white .card p { color: #56606F; }
 .section-white .more, .section-white a { color: #16294F; }
