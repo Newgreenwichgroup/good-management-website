@@ -1,0 +1,4 @@
+# Permanent redirects (Cloudflare Pages / Netlify format)
+# The leasehold article moved from the generic /article address in October 2026.
+/article                 /article-leasehold-reforms   301
+/article.html            /article-leasehold-reforms   301

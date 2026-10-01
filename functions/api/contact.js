@@ -39,14 +39,14 @@ export async function onRequestPost({ request, env }) {
       data = Object.fromEntries(formData.entries());
     }
   } catch (err) {
-    return Response.redirect(new URL("/contact.html?error=invalid", url), 303);
+    return Response.redirect(new URL("/contact?error=invalid", url), 303);
   }
 
   // Honeypot — the "website" field is hidden from real visitors via CSS.
   // Bots fill in every field they find. If it's filled, pretend success and
   // do nothing else, so the bot has no way to tell it was caught.
   if (data.website) {
-    return Response.redirect(new URL("/thank-you.html", url), 303);
+    return Response.redirect(new URL("/thank-you", url), 303);
   }
 
   const email = (data.email || "").toString().trim();
@@ -54,12 +54,12 @@ export async function onRequestPost({ request, env }) {
   const message = (data.message || "").toString().trim();
 
   if (!email || !subject || !message) {
-    return Response.redirect(new URL("/contact.html?error=missing", url), 303);
+    return Response.redirect(new URL("/contact?error=missing", url), 303);
   }
 
   if (!env.RESEND_API_KEY) {
     console.error("RESEND_API_KEY is not configured for this Pages project.");
-    return Response.redirect(new URL("/contact.html?error=config", url), 303);
+    return Response.redirect(new URL("/contact?error=config", url), 303);
   }
 
   const toAddress = env.CONTACT_TO || "team@goodmanagement.co.uk";
@@ -83,18 +83,18 @@ export async function onRequestPost({ request, env }) {
 
     if (!emailResponse.ok) {
       console.error("Resend API error:", await emailResponse.text());
-      return Response.redirect(new URL("/contact.html?error=send", url), 303);
+      return Response.redirect(new URL("/contact?error=send", url), 303);
     }
   } catch (err) {
     console.error("Error calling Resend:", err);
-    return Response.redirect(new URL("/contact.html?error=send", url), 303);
+    return Response.redirect(new URL("/contact?error=send", url), 303);
   }
 
-  return Response.redirect(new URL("/thank-you.html", url), 303);
+  return Response.redirect(new URL("/thank-you", url), 303);
 }
 
 // A GET request to /api/contact isn't a real submission — send visitors back
 // to the contact page instead of showing raw JSON or an error.
 export async function onRequestGet({ request }) {
-  return Response.redirect(new URL("/contact.html", request.url), 303);
+  return Response.redirect(new URL("/contact", request.url), 303);
 }

@@ -47,7 +47,7 @@
     banner.innerHTML =
       '<div class="cookie-banner__inner">' +
         '<p class="cookie-banner__text">We would like to use Google Analytics cookies to understand how people use this site, so we can improve it. ' +
-        'They are only set if you accept. <a href="privacy.html#cookies">Read our privacy notice</a>.</p>' +
+        'They are only set if you accept. <a href="/privacy#cookies">Read our privacy notice</a>.</p>' +
         '<div class="cookie-banner__actions">' +
           '<button type="button" class="btn cookie-btn" data-consent="granted">Accept</button>' +
           '<button type="button" class="btn cookie-btn" data-consent="denied">Reject</button>' +

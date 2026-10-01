@@ -9,7 +9,9 @@ Everything renders as-is if you open `index.html` in a browser.
 |---|---|
 | `index.html` | Home — intro, hero, illustration, FAQ, recent posts |
 | `insights.html` | Blog index with search and category filters |
-| `article.html` | Article template (leasehold reforms) |
+| `article-leasehold-reforms.html` | Leasehold reforms article (moved from `article.html`; old address redirects via `_redirects`) |
+| `article-planned-maintenance.html`, `article-well-run-block.html`, `article-fire-safety.html`, `article-rmc-directors.html` | Further articles |
+| `_redirects` | Permanent redirects (Cloudflare Pages / Netlify format) |
 | `article-service-charges.html` | Second article |
 | `testimonials.html` | **Placeholder text** — awaiting real quotations |
 | `contact.html` | Contact form |
@@ -63,6 +65,9 @@ Update if the domain differs.
 ---
 
 ## Conventions worth keeping
+
+- **Links use clean, root-relative URLs** (`/insights`, `/article-fire-safety`), never `.html`. The host serves `insights.html` at `/insights`. Opening files straight from disk will not follow these links; preview through the host or a local server.
+- **Every indexable page has a canonical tag and `og:url`** with its clean URL. `404` and `thank-you` are `noindex` and have neither.
 
 - **Two navies.** `#111C30` for the logo and dark panels only. `#1F3A70` for
   headings, buttons and links. Applying the logo navy to display type makes it

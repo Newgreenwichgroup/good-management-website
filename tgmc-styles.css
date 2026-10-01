@@ -259,7 +259,11 @@ nav a:hover { color: #FFFFFF; }
 
 .search-status { text-align: center; font-size: 13px; color: var(--c-muted); margin: -18px 0 22px; }
 .filters { text-align: center; margin-bottom: var(--s-4); }
-.filters a {
+.filters a, .filters button {
+  background: none;
+  border: 0;
+  padding: 4px 0;
+  cursor: pointer;
   font-family: var(--f-geo);
   font-size: 11px;
   text-transform: uppercase;
@@ -269,7 +273,9 @@ nav a:hover { color: #FFFFFF; }
   margin: 0 10px;
   white-space: nowrap;
 }
-.filters a:hover, .filters a[aria-current="true"] { color: var(--c-blue); }
+.filters a:hover, .filters a[aria-current="true"],
+.filters button:hover, .filters button[aria-pressed="true"] { color: var(--c-blue); }
+.filters button:focus-visible { outline: 1px solid var(--c-accent); outline-offset: 4px; }
 
 .pagination { text-align: center; padding-top: var(--s-4); border-top: 1px solid var(--c-rule); margin-top: var(--s-4); }
 .pagination .count { display: block; font-size: 13px; color: var(--c-muted); margin-bottom: 16px; }
@@ -325,7 +331,8 @@ nav a:hover { color: #FFFFFF; }
 .site-footer .mark { display: block; max-width: 520px; margin: 0 auto var(--s-2); text-decoration: none; border: 0; }
 .site-footer .mark svg { display: block; width: 100%; height: auto; }
 .site-footer .foot-links { margin-bottom: 18px; }
-.site-footer .foot-links a {
+.site-footer .foot-links a,
+.site-footer .foot-links .link-button {
   font-family: var(--f-geo);
   font-size: 11px;
   text-transform: uppercase;
@@ -334,7 +341,16 @@ nav a:hover { color: #FFFFFF; }
   text-decoration: none;
   margin: 0 10px;
 }
-.site-footer .foot-links a:hover { color: #FFFFFF; }
+.site-footer .foot-links a:hover,
+.site-footer .foot-links .link-button:hover { color: #FFFFFF; }
+
+/* A button that looks like the text around it (used for "Cookie settings"). */
+.link-button {
+  background: none; border: 0; padding: 0; margin: 0;
+  font: inherit; line-height: inherit; color: inherit; letter-spacing: inherit; text-transform: inherit;
+  text-decoration: underline; cursor: pointer;
+}
+.site-footer .foot-links .link-button { text-decoration: none; }
 .site-footer .legal {
   font-family: var(--f-serif);
   font-size: 12px;
