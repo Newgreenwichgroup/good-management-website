@@ -290,6 +290,36 @@ nav a:hover { color: #FFFFFF; }
   .section { page-break-inside: auto; }
 }
 
+/* --- Cookie banner --------------------------------------------------------
+   Accept and Reject are deliberately the same size and weight: refusing must
+   be as easy as agreeing.                                                    */
+.cookie-banner {
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 1000;
+  background: #FFFFFF; color: #16294F;
+  border-top: 1px solid #DDE2EA;
+  box-shadow: 0 -6px 24px rgba(10, 20, 40, 0.18);
+  padding: 18px 20px calc(18px + env(safe-area-inset-bottom, 0px));
+}
+.cookie-banner[hidden] { display: none; }
+.cookie-banner__inner {
+  max-width: var(--w-page); margin: 0 auto;
+  display: flex; align-items: center; gap: 20px 28px; flex-wrap: wrap;
+}
+.cookie-banner__text {
+  flex: 1 1 380px; margin: 0;
+  font-family: var(--f-serif); font-size: 14px; line-height: 1.6; color: #16294F;
+}
+.cookie-banner__text a { color: #16294F; text-decoration: underline; }
+.cookie-banner__actions { display: flex; gap: 12px; flex: 0 0 auto; }
+.cookie-btn { background: #16294F; color: #FFFFFF; padding: 12px 26px; min-width: 120px; }
+.cookie-btn:hover { background: #1D3663; }
+.cookie-btn:focus-visible { outline: 2px solid #16294F; outline-offset: 3px; }
+@media (max-width: 560px) {
+  .cookie-banner__actions { width: 100%; }
+  .cookie-btn { flex: 1; }
+}
+@media print { .cookie-banner { display: none !important; } }
+
 /* --- Footer --------------------------------------------------------------- */
 .site-footer { background: #101E3B; padding: var(--s-4) 0; text-align: center; }
 .site-footer .mark { display: block; max-width: 520px; margin: 0 auto var(--s-2); text-decoration: none; border: 0; }

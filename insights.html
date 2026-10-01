@@ -1,6 +1,27 @@
 <!DOCTYPE html>
 <html lang="en-GB">
 <head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-91WJSMJ180"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  // Consent Mode: nothing is stored until the visitor accepts (see consent.js).
+  gtag('consent', 'default', {
+    analytics_storage: 'denied',
+    ad_storage: 'denied',
+    ad_user_data: 'denied',
+    ad_personalization: 'denied'
+  });
+  try {
+    if (localStorage.getItem('tgmc-consent') === 'granted') {
+      gtag('consent', 'update', { analytics_storage: 'granted' });
+    }
+  } catch (e) {}
+  gtag('js', new Date());
+
+  gtag('config', 'G-91WJSMJ180');
+</script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Insights | The Good Management Company</title>
@@ -194,6 +215,7 @@
       <a href="contact.html">Contact</a>
       <a href="sell-your-block-management-business.html">For block managers and agents looking to sell</a>
       <a href="privacy.html">Privacy</a>
+      <a href="#" data-cookie-settings>Cookie settings</a>
     </div>
     <div class="legal">
       The Good Management Company Limited &nbsp;&middot;&nbsp; Registered in England and Wales &nbsp;&middot;&nbsp; Company number 17421382<br>
@@ -204,5 +226,6 @@
   </div>
 </footer>
 
+<script src="consent.js" defer></script>
 </body>
 </html>
