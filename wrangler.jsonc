@@ -1,0 +1,9 @@
+{
+  "name": "good-management-website",
+  "compatibility_date": "2026-10-06",
+  "main": "_worker.js",
+  "assets": {
+    "directory": ".",
+    "binding": "ASSETS"
+  }
+}
