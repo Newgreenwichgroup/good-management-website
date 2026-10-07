@@ -65,6 +65,7 @@ async function handleContactPost(request, env, url) {
       headers: {
         Authorization: `Bearer ${env.RESEND_API_KEY}`,
         "Content-Type": "application/json",
+        "User-Agent": "goodmanagement-website/1.0",
       },
       body: JSON.stringify({
         from: fromAddress,
@@ -76,7 +77,7 @@ async function handleContactPost(request, env, url) {
     });
 
     if (!emailResponse.ok) {
-      console.error("Resend API error:", await emailResponse.text());
+      console.error("Resend API error:", emailResponse.status, await emailResponse.text());
       return Response.redirect(new URL("/contact.html?error=send", url), 303);
     }
   } catch (err) {
